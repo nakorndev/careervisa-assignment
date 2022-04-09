@@ -1,6 +1,6 @@
 import path from 'path'
 import { Locale } from './locales/_interface'
-import splitChanges, { SplitTypes } from './lib/splittChanges'
+import splitChanges, { SplitTypes } from './lib/splitChanges'
 
 interface CLIOptions {
   locale: string
@@ -23,7 +23,7 @@ async function splitting (amount: string, options: CLIOptions): Promise<void> {
   if (Number.isNaN(amountAsNumber)) {
     throw new Error('amount ที่ระบุไม่ใช่ตัวเลข')
   }
-  const localePath = path.join(__dirname, '../locales', `${options.locale}.js`)
+  const localePath = path.join(__dirname, './locales', `${options.locale}.js`)
   const locale = (await import(localePath)).default as Locale
   const splitted = splitChanges(amountAsNumber, locale.cashTypes)
   const texts = await locale.output(splitted)

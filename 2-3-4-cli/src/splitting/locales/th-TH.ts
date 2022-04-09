@@ -1,4 +1,4 @@
-import { CashTypes } from '../lib/splittChanges'
+import { CashTypes } from '../lib/splitChanges'
 import { Locale, LocaleOutput } from './_interface'
 
 const cashTypes: CashTypes = [

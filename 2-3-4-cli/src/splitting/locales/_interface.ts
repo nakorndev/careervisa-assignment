@@ -1,4 +1,4 @@
-import { CashTypes, SplitTypes } from '../lib/splittChanges'
+import { CashTypes, SplitTypes } from '../lib/splitChanges'
 
 export interface LocaleOutput {
   (splitted: SplitTypes): Promise<string[][]>
