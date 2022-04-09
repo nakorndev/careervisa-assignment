@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.14.181",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "eslint": "^7.32.0",
@@ -26,6 +27,8 @@
   },
   "dependencies": {
     "cli-table3": "^0.6.1",
-    "commander": "^9.1.0"
+    "commander": "^9.1.0",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21"
   }
 }

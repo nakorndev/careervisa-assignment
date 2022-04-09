@@ -18,7 +18,7 @@ function getLastSplitted (splitted: SplitTypes) {
   }
 }
 
-async function getAmount (amount: string, options: CLIOptions): Promise<void> {
+async function splitting (amount: string, options: CLIOptions): Promise<void> {
   const amountAsNumber = Number(amount)
   if (Number.isNaN(amountAsNumber)) {
     throw new Error('amount ที่ระบุไม่ใช่ตัวเลข')
@@ -34,4 +34,4 @@ async function getAmount (amount: string, options: CLIOptions): Promise<void> {
   console.log(`cross-check: ${last.crossCheck}`)
 }
 
-export default getAmount
+export default splitting
