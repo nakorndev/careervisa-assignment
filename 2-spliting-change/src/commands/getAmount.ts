@@ -10,8 +10,12 @@ function mapStringText (texts: string[][]) {
   return texts.map(text => text.join('\t')).join('\n')
 }
 
-function crossCheck (splitted: SplitTypes): boolean {
-  return splitted[splitted.length - 1].amountLeft !== 0
+function getLastSplitted (splitted: SplitTypes) {
+  const last = splitted[splitted.length - 1]
+  return {
+    splitted: last,
+    crossCheck: last.amountLeft !== 0
+  }
 }
 
 async function getAmount (amount: string, options: CLIOptions): Promise<void> {
@@ -24,7 +28,9 @@ async function getAmount (amount: string, options: CLIOptions): Promise<void> {
   const splitted = splitChanges(amountAsNumber, locale.cashTypes)
   const texts = await locale.output(splitted)
   console.log(mapStringText(texts))
-  console.log(`cross-check: ${crossCheck(splitted)}`)
+  const last = getLastSplitted(splitted)
+  console.log(`คงเหลือ: ${last.splitted.totalRecursive}`)
+  console.log(`cross-check: ${last.crossCheck}`)
 }
 
 export default getAmount
