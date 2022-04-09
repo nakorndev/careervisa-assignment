@@ -1,6 +1,6 @@
 import { program, createCommand } from 'commander'
 import packageJson from '../package.json'
-import splitting from './commands/splitting'
+import splitting from './splitting/splitting'
 
 const splittingCommand = createCommand('splitting')
   .description('จำนวนเงินทอน')
