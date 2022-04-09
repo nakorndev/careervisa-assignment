@@ -13,12 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.181",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "jest": "^27.5.1",
@@ -29,6 +31,6 @@
     "cli-table3": "^0.6.1",
     "commander": "^9.1.0",
     "lodash": "^4.17.21",
-    "lodash-es": "^4.17.21"
+    "ora-classic": "^5.4.2"
   }
 }

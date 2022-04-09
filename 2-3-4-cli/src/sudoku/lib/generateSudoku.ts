@@ -1,8 +1,9 @@
 import { clone, range, sample } from 'lodash'
 
-function generateSudoku (size: 4 | 9 | 16): string[][] {
+function generateSudoku (size: 4 | 9 | 16): Promise<string[][]> {
   const table: string[][] = []
-  const set = range(size === 16 ? 0 : 1, size === 16 ? size : size + 1).map(v => v.toString(16).toUpperCase())
+  const set = range(size === 16 ? 0 : 1, size === 16 ? size : size + 1)
+    .map((v: number) => v.toString(16).toUpperCase())
   for (let i = 0; i < size; i++) {
     let row: string[] = []
     let rowRest = clone(set)
@@ -18,14 +19,14 @@ function generateSudoku (size: 4 | 9 | 16): string[][] {
             top.push(table[k][j])
           }
         }
-        const selectSet = String(sample(rowRest.filter(v => !top.includes(v))))
-        rowRest.splice(rowRest.findIndex(v => v === selectSet), 1)
+        const selectSet = String(sample(rowRest.filter((v: string) => !top.includes(v))))
+        rowRest.splice(rowRest.findIndex((v: string) => v === selectSet), 1)
         row.push(selectSet)
       }
     }
     table.push(row)
   }
-  return table
+  return Promise.resolve(table)
 }
 
 export default generateSudoku
