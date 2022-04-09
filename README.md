@@ -10,7 +10,8 @@
 
 ```sh
 cd 2-3-4-cli # เปลี่ยนไปที่โฟลเดอร์
-npm i # ติดตั้ง node_modules
+npm i # Install node_modules
+npm run build # Build TypeScript
 npm start -- --help # ใช้งาน CLI
 npm start -- splitting 744768.37 # แยกจำนวนเงินทอน
 npm start -- sudoku 16 # สุ่มกระดานซูโดกุขนาด 16 (ใช้ได้เฉพาะ 4, 9, 16)
