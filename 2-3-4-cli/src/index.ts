@@ -1,11 +1,14 @@
-import { program } from 'commander'
+import { program, createCommand } from 'commander'
 import packageJson from '../package.json'
-import getAmount from './commands/getAmount'
+import splitting from './commands/splitting'
 
-program
-  .description(packageJson.description)
-  .version(packageJson.version)
+const splittingCommand = createCommand('splitting')
+  .description('จำนวนเงินทอน')
   .argument('<amount>', 'จำนวนเงิน')
   .option('-l --locale <string>', 'ภาษาที่จะแสดงผล', 'th-TH')
-  .action(getAmount)
+  .action(splitting)
+
+program
+  .version(packageJson.version)
+  .addCommand(splittingCommand)
   .parse()

@@ -19,6 +19,7 @@ function getLastSplitted (splitted: SplitTypes) {
 }
 
 async function getAmount (amount: string, options: CLIOptions): Promise<void> {
+  console.log(amount)
   const amountAsNumber = Number(amount)
   if (Number.isNaN(amountAsNumber)) {
     throw new Error('amount ที่ระบุไม่ใช่ตัวเลข')
@@ -29,7 +30,7 @@ async function getAmount (amount: string, options: CLIOptions): Promise<void> {
   const texts = await locale.output(splitted)
   console.log(mapStringText(texts))
   const last = getLastSplitted(splitted)
-  console.log(`คงเหลือ: ${last.splitted.totalRecursive}`)
+  console.log(`รวมที่ต้องทอน: ${last.splitted.totalRecursive}`)
   console.log(`cross-check: ${last.crossCheck}`)
 }
 
